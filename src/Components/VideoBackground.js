@@ -12,7 +12,7 @@ const VideoBackground = ({ movieId }) => {
   
         allowFullScreen
         className="w-screen aspect-video pointer-events-none "
-        src={`https://www.youtube.com/embed/${trailer?.key}?autoplay=1&mute=1&rel=0`}
+        src={`https://www.youtube-nocookie.com/embed/${trailer?.key}?rel=0&autoplay=1&loop=1&mute=1&controls=0&playlist=${trailer?.key}`}
         title="YouTube video player"
       ></iframe>
     </div>
