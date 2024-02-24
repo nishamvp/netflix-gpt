@@ -11,7 +11,7 @@ export const useVideoBackground = (movieId) => {
     if (data?.results && data.results.length > 0) {
       const filterData = data.results.filter(
         (video) =>
-          video?.type === "Trailer" && video.name === "Official Trailer"
+          video?.type === "Trailer" 
       );
       const trailer = filterData.length > 0 ? filterData[0] : data.results[0];
       dispatch(addMovieVideo(trailer));
