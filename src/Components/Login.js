@@ -9,7 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { USER_AVATAR } from "../utils/constants";
+import { BG_IMG, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -85,7 +85,7 @@ const Login = () => {
       <Header />
       <div className=" w-full h-full  ">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/5cc9ec21-d7a5-4a49-ab1d-c9b5ab1b124f/AE-en-20240212-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
+          src={BG_IMG}
           alt="Background"
           className="opacity-40 w-full h-full bg-cover"
         />

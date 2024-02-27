@@ -1,45 +1,51 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { TMDB_TOKEN } from "./constants";
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://api.themoviedb.org/3/movie",
+    baseUrl: "https://api.themoviedb.org/3",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MDE3YjUwNDBkMDIzZDc5NDU5N2M5MmZjYjVmZGVjYSIsInN1YiI6IjYzZWNlZTMzOGU4NzAyMDA4MjNiNmM2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1UeYw3JFoujKC1eiscB-pPuJsUH_-_WJi2xzb5c1eek",
+      Authorization: TMDB_TOKEN,
     },
   }),
   endpoints: (builder) => ({
     getMovieDetails: builder.query({
       query: () => ({
-        url: "/now_playing?&page=1",
+        url: "/movie/now_playing?page=1",
         method: "GET",
       }),
     }),
     getMovieVideos: builder.query({
       query: (id) => ({
-        url: `${id}/videos`,
+        url: `/movie/${id}/videos`,
         method: "GET",
       }),
     }),
     getPopularMovies: builder.query({
       query: () => ({
-        url: `/popular?page=1`,
+        url: `/movie/popular?page=1`,
         method: "GET",
       }),
     }),
     getTopRatedMovies: builder.query({
       query: () => ({
-        url: `top_rated?page=1`,
+        url: `/movie/top_rated?page=1`,
         method: "GET",
-      })
+      }),
     }),
     getUpcomingMovies: builder.query({
       query: () => ({
-        url: `upcoming?page=1`,
+        url: `/movie/upcoming?page=1`,
         method: "GET",
-      })
+      }),
     }),
+    getSearchedMovies: builder.query({
+      query: (movie) => ({
+        url: `/search/movie?query=${movie}&include_adult=false&page=1`,
+        method: "GET",
+      }),
+    })
   }),
 });
 
@@ -48,5 +54,6 @@ export const {
   useGetMovieVideosQuery,
   useGetPopularMoviesQuery,
   useGetTopRatedMoviesQuery,
-  useGetUpcomingMoviesQuery
+  useGetUpcomingMoviesQuery,
+  useGetSearchedMoviesQuery
 } = apiSlice;
