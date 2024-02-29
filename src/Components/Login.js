@@ -89,10 +89,10 @@ const Login = () => {
           alt="Background"
           className="opacity-40 w-full h-full object-cover"
         />
-        <div className="lg:w-4/12 md:w-6/12 max-sm:w-10/12 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-60 rounded-lg mt-10">
+        <div className="lg:w-4/12 md:w-6/12 max-sm:w-10/12 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-60 rounded-lg ">
           {/* Content */}
           <form
-            className="max-w-10/12 max-sm:w-10/12 max-lg:w-10/12 max-xl:w-10/12 max-2xl:w-10/12  m-auto mt-10 text-white"
+            className="max-w-10/12 max-md:w-8/12 max-sm:w-10/12 max-lg:w-10/12 max-xl:w-10/12 max-2xl:w-10/12 md:p-5  m-auto mt-10 text-white"
             onSubmit={handleSubmit}
           >
             <h1 className=" text-3xl font-semibold mb-4">
