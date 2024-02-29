@@ -87,7 +87,7 @@ const Login = () => {
         <img
           src={BG_IMG}
           alt="Background"
-          className="opacity-40 w-full h-full bg-cover"
+          className="opacity-40 w-full h-full object-cover"
         />
         <div className="lg:w-4/12 md:w-6/12 max-sm:w-10/12 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-60 rounded-lg mt-10">
           {/* Content */}

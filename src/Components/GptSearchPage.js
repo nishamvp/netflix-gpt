@@ -6,11 +6,11 @@ import GptSuggestions from "./GptSuggestions";
 const GptSearchPage = () => {
   return (
     <div>
-      <div className="fixed bg-black  -z-20">
+      <div className="h-screen fixed bg-black  -z-20">
         <img
           src={BG_IMG}
           alt="Background"
-          className="opacity-40 w-full h-full bg-cover"
+          className="opacity-40 w-screen h-screen object-cover"
         />
       </div>
       <GptSearchBar />

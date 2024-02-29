@@ -52,13 +52,13 @@ const Header = () => {
     dispatch(setLanguage(e.target.value));
   };
   return (
-    <div className="absolute z-20 w-full flex justify-between items-center bg-gradient-to-b from-black">
-      <img src={LOGO} alt="Logo" className="w-52 mx-2 " />
+    <div className="absolute z-20 w-full flex flex-col md:flex-row justify-between items-center bg-gradient-to-b from-black">
+      <img src={LOGO} alt="Logo" className=" w-32 md:w-52 mx-2 " />
       {user && (
-        <div className="flex items-center mr-6 gap-3">
+        <div className="flex items-center mr-6 gap-2 md:gap-3 ">
           {isShowSearch && (
             <select
-              className="p-2 m-2 bg-white text-black font-bold rounded-lg"
+              className="p-1 text-xs md:text-lg md:p-2 m-2 bg-white text-black font-bold rounded-lg"
               onChange={handleSelect}
             >
               {multiLingual.map((lang) => (
@@ -70,12 +70,12 @@ const Header = () => {
           )}
 
           <button
-            className="text-white font-bold bg-red-600 px-3 py-1 rounded-lg"
+            className=" text-white font-bold bg-red-600 px-2 py-1 text-xs md:text-lg md:px-3 md:py-1 rounded-lg"
             onClick={handleSearch}
           >
             {isShowSearch ? "Home" : "Search"}
           </button>
-          <img className="w-10 rounded-lg" src={user?.photoURL} alt="img" />
+          <img className="w-7 md:w-10 rounded-full md:rounded-lg" src={user?.photoURL} alt="img" />
           <p className="text-white font-bold ">{user?.displayName}</p>
           <button onClick={handleSignOut} className="text-white font-bold ">
             SignOut

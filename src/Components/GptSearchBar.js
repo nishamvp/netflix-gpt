@@ -32,18 +32,18 @@ const GptSearchBar = () => {
     <div>
       {isLoading && <p>Loading...</p>}
       {!isLoading && (
-        <div className="pt-[10%] flex justify-center">
+        <div className="pt-[28%] md:pt-[10%] flex justify-center">
           <form
-            className="w-1/2 bg-black grid grid-cols-12 p-3"
+            className=" md:w-1/2 bg-black grid grid-cols-12 p-2 md:p-3"
             onSubmit={handleSubmit}
           >
             <input
               ref={searchValue}
-              className="p-3 mr-4 col-span-8"
+              className="rounded-lg p-1 md:p-3 mr-4 col-span-8 placeholder:text-xs md:placeholder:text-lg"
               type="text"
               placeholder={languageConstants[lang].placeholder}
             />
-            <button className="col-span-4 bg-red-600 font-bold text-white rounded-lg">
+            <button className=" text-xs md:text-lg col-span-4 bg-red-600 font-bold text-white rounded-lg">
               {languageConstants[lang].search}
             </button>
           </form>

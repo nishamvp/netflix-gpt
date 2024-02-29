@@ -7,11 +7,11 @@ const VideoBackground = ({ movieId }) => {
   useVideoBackground(movieId);
 
   return (
-    <div className=" w-screen">
+    <div className="bg-black pt-5 md:p-0 w-screen">
       <iframe
   
         allowFullScreen
-        className="w-screen aspect-video pointer-events-none "
+        className=" w-screen aspect-video pointer-events-none "
         src={`https://www.youtube-nocookie.com/embed/${trailer?.key}?rel=0&autoplay=1&mute=1&controls=0&playlist=${trailer?.key}`}
         title="YouTube video player"
       ></iframe>
